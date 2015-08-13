@@ -10,7 +10,7 @@ module Lita
         
         raise 'RequestFail' unless bacon.status == 200
 
-        response.reply ">>>#{bacon[0]}" unless bacon.nil?
+        response.reply "#{bacon}"
       end
 
     end
