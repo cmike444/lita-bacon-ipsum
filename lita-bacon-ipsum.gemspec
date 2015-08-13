@@ -2,11 +2,11 @@ Gem::Specification.new do |spec|
   spec.name          = "lita-bacon-ipsum"
   spec.version       = "0.1.0"
   spec.authors       = ["Chris Mikelson"]
-  spec.email         = ["chris.mikelson@640labs.com"]
-  spec.description   = "TODO: Add a description"
-  spec.summary       = "TODO: Add a summary"
-  spec.homepage      = "TODO: Add a homepage"
-  spec.license       = "TODO: Add a license"
+  spec.email         = ["chrismikelson@gmail.com"]
+  spec.description   = "Get bacon ipsum text from Lita."
+  spec.summary       = "Get bacon ipsum text from Lita."
+  spec.homepage      = "https://github.com/cmike444/lita-bacon-ipsum"
+  spec.license       = "MIT"
   spec.metadata      = { "lita_plugin_type" => "handler" }
 
   spec.files         = `git ls-files`.split($/)
