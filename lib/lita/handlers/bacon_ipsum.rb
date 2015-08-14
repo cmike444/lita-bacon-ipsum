@@ -25,8 +25,9 @@ module Lita
         })
 
       def bacon_ipsum_image(response)
-        height = response.match_data[:height] ||= 200
-        width  = response.match_data[:width] ||= 600
+        match  = response.match_data
+        height = match[:height] ? !match[:height].empty? : 200
+        width  = match[:width] ? !match[:width].empty? : 600
 
         response.reply "#{width} by #{height} Bacon: http://baconmockup.com/#{width}/#{height}"
       end
