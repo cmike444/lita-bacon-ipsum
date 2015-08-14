@@ -1,6 +1,6 @@
 Gem::Specification.new do |spec|
   spec.name          = "lita-bacon-ipsum"
-  spec.version       = "0.1.6"
+  spec.version       = "0.1.7"
   spec.authors       = ["Chris Mikelson"]
   spec.email         = ["chrismikelson@gmail.com"]
   spec.description   = "Get bacon ipsum text from Lita."

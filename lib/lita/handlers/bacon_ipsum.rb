@@ -4,7 +4,7 @@ module Lita
 
       ## Bacon Text
       route(/give me bacon text/i, :bacon_ipsum_text, command: true, help: {
-          "give me bacon" => "Bacon ipsum dolor amet... Alternate: `give me bacon text`"
+          "give me bacon text" => "Gives you: Bacon ipsum dolor amet..."
         })
 
       def bacon_ipsum_text(response)
@@ -19,18 +19,16 @@ module Lita
         response.reply "Sorry, I was unable to retreive bacon for you."
       end
 
-      ## Bacon Images
+      ## Bacon Image
       route(/give me bacon image ((?<width>\d+) by (?<height>\d+))?/i, :bacon_ipsum_image, command: true, help: {
-          "give me bacon image WIDTH by HEIGHT" => "Gives bacon image based on WIDTH and HEIGHT"
+          "give me bacon image" => "Gives you bacon image. Alternate: `give me bacon image WIDTH and HEIGHT`"
         })
 
       def bacon_ipsum_image(response)
         height = response.match_data[:height] ||= 200
         width  = response.match_data[:width] ||= 600
 
-        response.reply "<http://baconmockup.com/#{width}/#{height}|#{width} by #{height} Bacon>"
-      rescue  
-        response.reply "Sorry, I was unable to retreive bacon for you."
+        response.reply "#{width} by #{height} Bacon: http://baconmockup.com/#{width}/#{height}"
       end
 
     end
