@@ -20,14 +20,14 @@ module Lita
       end
 
       ## Bacon Image
-      route(/give me bacon image ((?<width>\d+) by (?<height>\d+))?/i, :bacon_ipsum_image, command: true, help: {
-          "give me bacon image" => "Gives you bacon image. Alternate: `give me bacon image WIDTH and HEIGHT`"
+      route(/give me bacon image (?<width>\d+) by (?<height>\d+)/i, :bacon_ipsum_image, command: true, help: {
+          "give me bacon image WIDTH by HEIGHT" => "Gives you a bacon image."
         })
 
       def bacon_ipsum_image(response)
         match  = response.match_data
-        height = match[:height] ? !match[:height].empty? : 200
-        width  = match[:width] ? !match[:width].empty? : 600
+        height = match[:height]
+        width  = match[:width]
 
         response.reply "#{width} by #{height} Bacon: http://baconmockup.com/#{width}/#{height}"
       end
