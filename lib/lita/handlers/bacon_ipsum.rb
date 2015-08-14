@@ -3,7 +3,7 @@ module Lita
     class BaconIpsum < Handler
 
       ## Bacon Text
-      route(/give me bacon (text)?/i, :bacon_ipsum_text, command: true, help: {
+      route(/give me bacon text/i, :bacon_ipsum_text, command: true, help: {
           "give me bacon" => "Bacon ipsum dolor amet... Alternate: `give me bacon text`"
         })
 
@@ -20,7 +20,7 @@ module Lita
       end
 
       ## Bacon Images
-      route(/give me bacon (image)? ((?<width>\d+) by (?<height>\d+))?/i, :bacon_ipsum_image, command: true, help: {
+      route(/give me bacon image ((?<width>\d+) by (?<height>\d+))?/i, :bacon_ipsum_image, command: true, help: {
           "give me bacon image WIDTH by HEIGHT" => "Gives bacon image based on WIDTH and HEIGHT"
         })
 
