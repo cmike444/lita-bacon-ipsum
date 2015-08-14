@@ -6,11 +6,15 @@ module Lita
         })
 
       def bacon_ipsum(response)
-        bacon = http.get "https://baconipsum.com/api/?type=all-meat&start-with-lorem=1"
+        resp = http.get "https://baconipsum.com/api/?type=all-meat&start-with-lorem=1"
         
-        raise 'RequestFail' unless bacon.status == 200
+        bacon = MultiJson.load(resp.body)
 
-        response.reply "#{bacon.body[0]}"
+        if bacon
+          response.reply bacon[0]
+        else
+          response.reply "Sorry, I was unable to retreive bacon for you."
+        end
       end
 
     end
